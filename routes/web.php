@@ -33,4 +33,6 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 });
 
 Route::resource('appointment', 'AppointmentController');
+Route::post('/appointment/check', [App\Http\Controllers\AppointmentController::class, 'check'])->name('appointment.check');
+
 

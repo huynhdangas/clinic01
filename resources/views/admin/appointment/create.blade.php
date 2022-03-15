@@ -37,6 +37,13 @@
         </div>
     @endif
 
+    @foreach($errors->all() as $error)
+        <div class="alert alert-danger">
+            {{ $error }}
+        </div>
+
+    @endforeach
+
     <form action="{{route('appointment.store')}}" method="post"> @csrf
 
 
@@ -48,7 +55,7 @@
             <h3>Choose date</h3>
         </div>
         <div class="card-body">
-            <input type="text" name="date" class="form-control datetimepicker-input" id="datepicker" data-toggle="datetimepicker" data-target="#datepicker">
+            <input type="text" name="date" autocomplete="off" class="form-control datetimepicker-input" id="datepicker" data-toggle="datetimepicker" data-target="#datepicker">
             
         </div>
     </div>
