@@ -37,6 +37,12 @@
         </div>
     @endif
 
+    @if(Session::has('errmessage'))
+        <div class="alert alert-danger">
+            {{ Session::get('errmessage') }}
+        </div>
+    @endif
+
     @foreach($errors->all() as $error)
         <div class="alert alert-danger">
             {{ $error }}
@@ -72,6 +78,10 @@
 
     </form>
 
+@if(Route::is('appointment.check'))
+
+<form action="{{route('update')}}" method="post">@csrf
+
     <div class="card">
         <div class="card-header">
             <h3>Choose AM time</h3>
@@ -82,9 +92,11 @@
             </span>
 
         </div>
+        
 
         <div class="card-body">
             <table class="table table-striped">
+                <input type="hidden" name="appointmentId" value="{{$appointmentId}}" >
                 <tbody>
                     <tr>
                         <th>1</th>
@@ -195,6 +207,39 @@
 
 
 </div>
+
+</form>
+
+@else
+<h3>You appointment time list: {{$myappointments->count()}}</h3>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Creator</th>
+                    <th>Date</th>
+                    <th>View/Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($myappointments as $appointment)
+                <tr>
+                    <td></td>
+                    <td>{{$appointment->doctor->name}}</td>
+                    <td>{{$appointment->date}}</td>
+                    <td>
+                        <form action="{{route('appointment.check')}}" method="post"> @csrf
+                            <input type="hidden" value="{{$appointment->date}}" name="date" >
+                            <button type="submit" class="btn btn-primary">View/Update</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+@endif
 
 <!-- chinh style -->
 

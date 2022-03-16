@@ -16,7 +16,8 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        return view('admin.appointment.index');
+        $myappointments = Appointment::latest()->where('user_id', auth()->user()->id)->get();
+        return view('admin.appointment.index', compact('myappointments'));
     }
 
     /**
@@ -113,5 +114,17 @@ class AppointmentController extends Controller
         return view('admin.appointment.index', compact('times', 'appointmentId', 'date'));
     }
 
+    public function updateTime(Request $request) {
+        $appointmentId = $request->appointmentId;
+        $appointment = Time::where('appointment_id', $appointmentId)->delete();
+        foreach($request->time as $time) {
+            Time::create([
+                'appointment_id' => $appointmentId,
+                'time' => $time,
+                'status' => 0
+            ]);
+        }
+        return redirect()->route('appointment.index')->with('message','Appointment time updated successfully.');
+    }
 
 }

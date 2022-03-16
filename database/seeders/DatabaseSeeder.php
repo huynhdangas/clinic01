@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         Role::create(['name'=>'doctor']);
         Role::create(['name'=>'admin']);
         Role::create(['name'=>'patient']);
+        Role::create(['name'=>'nurse']);
+        Role::create(['name'=>'testdoctor']);
         // \App\Models\User::factory(10)->create();
     }
 }
