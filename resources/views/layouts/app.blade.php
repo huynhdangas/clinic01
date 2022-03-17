@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Dang Sang Clinic') }}</title>
+    <title>Dang Sang Clinic</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -28,6 +28,24 @@
 
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+
+    <!-- css tu admin -->
+    <link rel="stylesheet" href="{{asset('template/plugins/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/icon-kit/dist/css/iconkit.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/ionicons/dist/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/jvectormap/jquery-jvectormap.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/weather-icons/css/weather-icons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/c3/c3.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/owl.carousel/dist/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/plugins/owl.carousel/dist/assets/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template/dist/css/theme.min.css')}}">
+    <script src="{{asset('template/src/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
 
     <style type="text/css">
         
@@ -110,6 +128,28 @@
         } );
         
     </script>
+    <!-- js tu admin -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{asset('template/src/js/vendor/jquery-3.3.1.min.js')}}"><\/script>')</script>
+    <script src="{{asset('template/plugins/popper.js/dist/umd/popper.min.js')}}"></script>
+    <script src="{{asset('template/plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('template/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{asset('template/plugins/screenfull/dist/screenfull.js')}}"></script>
+    <script src="{{asset('template/plugins/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('template/plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('template/plugins/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('template/plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('template/plugins/jvectormap/jquery-jvectormap.min.js')}}"></script>
+    <script src="{{asset('template/plugins/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js')}}"></script>
+    <script src="{{asset('template/plugins/moment/moment.js')}}"></script>
+    <script src="{{asset('template/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+    <script src="{{asset('template/plugins/d3/dist/d3.min.js')}}"></script>
+    <script src="{{asset('template/plugins/c3/c3.min.js')}}"></script>
+    <script src="{{asset('template/js/tables.js')}}"></script>
+    <script src="{{asset('template/js/widgets.js')}}"></script>
+    <script src="{{asset('template/js/charts.js')}}"></script>
+    <script src="{{asset('template/dist/js/theme.min.js')}}"></script>
+    <!-- end js admin -->
     <style type="text/css">
         body {
             background-color: #fff;
