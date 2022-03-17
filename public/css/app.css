@@ -54,7 +54,7 @@
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 0.9rem;
-  --bs-body-font-weight: 400;
+  --bs-body-font-weight: 600;
   --bs-body-line-height: 1.6;
   --bs-body-color: #212529;
   --bs-body-bg: #f8fafc;
@@ -3977,8 +3977,8 @@ textarea.form-control-lg {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
-  background-color: #f8fafc;
+  color: #fff;
+  background-color: #007bff;
   border-color: #dee2e6 #dee2e6 #f8fafc;
 }
 .nav-tabs .dropdown-menu {
@@ -4014,6 +4014,16 @@ textarea.form-control-lg {
 .nav-fill .nav-item .nav-link,
 .nav-justified .nav-item .nav-link {
   width: 100%;
+  color: #fff;
+}
+
+.nav-item { 
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  margin: 5px;
+  min-width: 100px;
+  text-align: center;
 }
 
 .tab-content > .tab-pane {
@@ -4440,7 +4450,7 @@ textarea.form-control-lg {
   color: rgba(0, 0, 0, 0.9);
 }
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.55);
+  color: rgb(255, 255, 255);
 }
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
   color: rgba(0, 0, 0, 0.7);
@@ -11286,3 +11296,5 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+

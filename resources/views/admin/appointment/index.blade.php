@@ -216,7 +216,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th></th>
+                    
                     <th>Creator</th>
                     <th>Date</th>
                     <th>View/Update</th>
@@ -225,7 +225,7 @@
             <tbody>
                 @foreach($myappointments as $appointment)
                 <tr>
-                    <td></td>
+                    
                     <td>{{$appointment->doctor->name}}</td>
                     <td>{{$appointment->date}}</td>
                     <td>

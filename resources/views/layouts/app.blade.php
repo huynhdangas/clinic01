@@ -7,10 +7,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Dang Sang Clinic') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- datepicker -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,13 +22,29 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- them vao -->
+    <link rel="stylesheet" href="{{asset('template/dist/css/theme.min.css')}}">
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+    <style type="text/css">
+        
+        ul li a{
+            font-size: 16px;
+            font-weight: 400;
+        }
+    </style>
+
+
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <h2 style="color: #007bff; font-weight: 700;">Dang Sang Clinic</h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -39,6 +59,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -52,9 +73,11 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item"><a class="nav-link" href="">{{ __('LS kham benh') }}</a></li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    User: {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -69,15 +92,43 @@
                                     </form>
                                 </div>
                             </li>
+
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 bg-white">
             @yield('content')
         </main>
     </div>
+
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd'}).val();
+        } );
+        
+    </script>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+            font-weight: 600;
+        }
+        .ui-corner-all {
+            background: green;
+            color: #fff;
+        }
+        .table-head {
+            height:50px;
+        }
+        .table-head tr,
+        .table-head th {
+            background: #007bff;
+            height:50px;
+            line-height: 50px;
+            color: #fff !important;
+        }
+    </style>
 </body>
 </html>
