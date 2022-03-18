@@ -83,6 +83,7 @@
 <!-- end info -->
 
 <!-- search doctor -->
+<form action="{{url('/')}}" method="get">
     <div class="card" style="margin-top:50px;">
         
         <div class="card-body">
@@ -101,7 +102,7 @@
             </div>
         </div>
     </div>
-
+</form>
 <!-- display doctor -->
 
     <div class="card" style="margin-top:50px;">  
@@ -128,7 +129,11 @@
                             <td><img src="{{asset('images')}}/{{$doctor->doctor->image}}" width="100" style="border-radius: 50%;" alt=""></td>
                             <td>{{$doctor->doctor->name}}</td>
                             <td>{{$doctor->doctor->department}}</td>
-                            <td><button class="btn btn-primary">Book Appointment</button></td>
+                            <td>
+                                <a href="{{route('create.appointment', [$doctor->user_id, $doctor->date])}}">
+                                    <button class="btn btn-primary">Book Appointment</button>
+                                </a>
+                            </td>
                         </tr>
                         @empty
                         <td>No Doctors Available</td>

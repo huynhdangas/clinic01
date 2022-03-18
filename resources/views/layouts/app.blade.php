@@ -81,20 +81,20 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" style="color: #fff;" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" style="color: #fff;" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item"><a class="nav-link" href="">{{ __('LS kham benh') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" style="color: #fff;" href="">{{ __('LS kham benh') }}</a></li>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" style="color: #fff;" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     User: {{ Auth::user()->name }}
                                 </a>
 
@@ -122,9 +122,16 @@
         </main>
     </div>
 
+    <!-- js picker date -->
     <script>
+        var dateToday = new Date();
         $( function() {
-            $( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd'}).val();
+            $("#datepicker").datepicker({
+                dateFormat: 'yy-mm-dd',
+                showButtonPanel: true,
+                numberOfMonths:2,
+                minDate:dateToday,
+            })
         } );
         
     </script>
@@ -156,7 +163,7 @@
             font-weight: 600;
         }
         .ui-corner-all {
-            background: green;
+            background: #007bff;
             color: #fff;
         }
         .table-head {
@@ -169,6 +176,27 @@
             line-height: 50px;
             color: #fff !important;
         }
+        label.btn{
+            padding: 0;
+        }
+        label.btn input{
+            opacity: 0; 
+            position: absolute;
+        }
+        label.btn span{
+            text-align: center; 
+            padding: 6px 12px; 
+            display: block;
+            min-width: 80px;
+        }
+        label.btn input:checked+span{
+            background-color: #007bff; 
+            color: #fff;
+        }
+
+
+
+    
     </style>
 </body>
 </html>
