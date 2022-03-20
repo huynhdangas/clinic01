@@ -19,6 +19,12 @@ Route::get('/', [App\Http\Controllers\FrontendController::class, 'index']);
 // patient appointment
 Route::get('/new-appointment/{doctorId}/{date}', [App\Http\Controllers\FrontendController::class, 'show'])->name('create.appointment');
 
+Route::post('/book/appointment', [App\Http\Controllers\FrontendController::class, 'store'])->name('booking.appointment')->middleware('auth');
+
+Route::get('/my-booking', [App\Http\Controllers\FrontendController::class, 'myBookings'])->name('my.booking')->middleware('auth');
+
+
+
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
 

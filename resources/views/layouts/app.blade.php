@@ -76,6 +76,18 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+
+                        @if(auth()->user()->role->name === 'patient')
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: #fff;" href="{{ route('my.booking') }}">{{ __('My Booking') }}</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: #fff;" href="">{{ __('LS kham benh') }}</a>
+                            </li>
+                        @endif
+
+
                         <!-- Authentication Links -->
 
                         @guest
@@ -91,7 +103,7 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item"><a class="nav-link" style="color: #fff;" href="">{{ __('LS kham benh') }}</a></li>
+                            
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" style="color: #fff;" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
